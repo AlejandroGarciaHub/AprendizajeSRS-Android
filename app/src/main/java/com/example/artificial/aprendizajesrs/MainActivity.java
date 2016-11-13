@@ -1,5 +1,7 @@
 package com.example.artificial.aprendizajesrs;
 
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,16 +15,36 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Realizar accion", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    public void lanzarPrueba(View view) {
+        Intent i = new Intent(this, PruebaActivity.class );
+        startActivity(i);
+    }
+
+    public void lanzarAcerca(View view) {
+        Intent i = new Intent(this, AcercaActivity.class );
+        startActivity(i);
+    }
+    public void lanzarListas(View view) {
+        Intent i = new Intent(this, ListasActivity.class );
+        startActivity(i);
+    }
+
+    public void lanzarLogros(View view) {
+        Intent i = new Intent(this, LogrosActivity.class );
+        startActivity(i);
     }
 
     @Override
